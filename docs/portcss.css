@@ -27,6 +27,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* --- NAVBAR --- */
 header.navbar {
     position: fixed;
@@ -222,7 +223,7 @@ header.navbar:hover {
 }
 
 .highlight {
-    color: rgb(250, 250, 250);
+    color: gold;
     font-weight: bold;
     letter-spacing: 1.5px;
     text-shadow: none;
