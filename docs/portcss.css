@@ -11,7 +11,6 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
-    scroll-snap-type: y proximity;
     background: linear-gradient(120deg, #18181f 0%, #232323 100%);
     min-height: 100%;
 }
@@ -140,11 +139,11 @@ header.navbar:hover {
 }
 
 .about-text {
-    max-width: 54rem;      /* Increased width */
+    max-width: 54rem;
     flex: 1;
     text-align: left;
-    font-size: 1rem;       /* Decreased font size */
-    line-height: 2;      /* Decreased line spacing */
+    font-size: 1rem;
+    line-height: 2;
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
     transition: opacity 0.5s ease;
@@ -188,7 +187,7 @@ header.navbar:hover {
     filter: grayscale(10%) brightness(1.1);
     transition: filter 0.3s, box-shadow 0.3s;
     position: relative;
-    left: 11rem; /* Move image a little to the right */
+    left: 11rem;
     top:8rem;
 }
 
@@ -213,20 +212,19 @@ header.navbar:hover {
     position: relative;
     background: linear-gradient(120deg, #18181f 0%, #232323 100%);
     box-shadow: 0 0 80px 0 #222 inset;
-
     display: flex;
-    flex-direction: column;   /* Stack heading and cards vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 2.5rem;              /* Space between heading and cards row */
+    gap: 2.5rem;
     overflow-x: unset;
-    margin-top: 5rem;         /* Breathing space from above section */
+    margin-top: 5rem;
 }
 
 .projects h3 {
     font-size: 2.2rem;
     color: rgb(250, 249, 248);
     letter-spacing: 2px;
-    margin-bottom: 0;         /* Remove bottom margin, handled by gap */
+    margin-bottom: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     text-shadow: none;
@@ -238,49 +236,32 @@ header.navbar:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: stretch;
     gap: 2.5rem;
     width: 100%;
     overflow-x: auto;
-}
-
-/* --- Projects Carousel Styles --- */
-.projects-carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    overflow: hidden;
-    padding: 2rem 0;
-}
-
-.cards-carousel {
-    display: flex;
-    flex-wrap: wrap;           /* Allow wrapping instead of scrolling */
-    gap: 3.5rem;
-    padding: 2rem 0;
-    width: 100%;
-    max-width: 1160px;
-    justify-content: flex-start;
+    overflow-y: visible;
+    padding: 2rem 2vw 2rem 2vw;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
     box-sizing: border-box;
-    overflow-x: unset;         /* Remove horizontal scroll */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
-.cards-carousel::-webkit-scrollbar {
-    display: none;
+.projects-cards-row::-webkit-scrollbar {
+    height: 8px;
+    background: #232323;
+}
+.projects-cards-row::-webkit-scrollbar-thumb {
+    background: #ffd70088;
+    border-radius: 4px;
 }
 
-/* --- PROJECTS SECTION: Card Hover Reveal --- */
 .cards-item {
-    min-width: 260px;
-    max-width: 260px;
-    flex: 0 0 260px;
-    height: 340px;
+    min-width: 320px;
+    max-width: 340px;
+    flex: 0 0 320px;
+    height: 360px;
     background: rgba(30,30,30,0.92);
     border-radius: 1.2rem;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 8px rgba(0,0,0,0.08);
@@ -294,11 +275,7 @@ header.navbar:hover {
     overflow: hidden;
     backdrop-filter: blur(2px);
     padding: 0;
-}
-
-.cards-item h4,
-.cards-item p {
-    display: none;
+    box-sizing: border-box;
 }
 
 .cards-item img {
@@ -307,7 +284,7 @@ header.navbar:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* This makes the image fill the card */
+    object-fit: cover;
     border-radius: 1.2rem;
     z-index: 1;
     transition: filter 0.3s, opacity 0.3s;
@@ -365,59 +342,28 @@ header.navbar:hover {
     font-weight: 600;
 }
 
-.cards-item:not(:last-child) {
-    margin-right: 2.5rem;
-}
-/* scrolling */
-
-
-
-
-
-
-
+/* --- RESPONSIVE PROJECTS --- */
 @media (max-width: 1100px) {
-    .projects-carousel-wrapper,
-    .cards-carousel {
-        max-width: 700px;
-    }
     .cards-item {
-        min-width: 220px;
-        max-width: 220px;
-        flex-basis: 220px;
+        min-width: 260px;
+        max-width: 260px;
+        flex: 0 0 260px;
+        height: 280px;
     }
 }
 
 @media (max-width: 900px) {
-    .projects-carousel-wrapper,
-    .cards-carousel {
-        max-width: 98vw;
-    }
-    .cards-carousel {
-        gap: 3.5rem;
-    }
-    .projects {
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+    .projects-cards-row {
+        gap: 1.2rem;
+        padding: 2rem 2vw 2rem 2vw;
+        overflow-x: auto;
+        flex-wrap: nowrap;
     }
     .cards-item {
-        min-width: 90vw;
-        max-width: 90vw;
-        flex-basis: 90vw;
-        height: auto;
-    }
-     .tech-grid {
-        gap: 1.2rem 1.2rem;
-    }
-    .tech-hex {
-        width: 85px;
-        height: 95px;
-    }
-    .tech-hex img {
-        width: 32px;
-        height: 32px;
+        min-width: 80vw;
+        max-width: 80vw;
+        flex: 0 0 80vw;
+        height: 220px;
     }
 }
 
@@ -443,22 +389,32 @@ header.navbar:hover {
         left: 0;
         top: 0;
     }
+    .projects-cards-row {
+        gap: 1rem;
+        padding: 1rem 2vw 1rem 2vw;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+    .cards-item {
+        min-width: 90vw;
+        max-width: 90vw;
+        flex: 0 0 90vw;
+        height: 180px;
+    }
 }
 
 @media (max-width: 600px) {
-    .projects-carousel-wrapper,
-    .cards-carousel {
-        max-width: 100vw;
-        padding: 0.5rem 0;
-    }
-    .cards-carousel {
-        gap: 2.5rem;
+    .projects-cards-row {
+        gap: 1rem;
+        padding: 1rem 2vw 1rem 2vw;
+        overflow-x: auto;
+        flex-wrap: nowrap;
     }
     .cards-item {
-        min-width: 94vw;
-        max-width: 94vw;
-        flex-basis: 94vw;
-        padding: 1rem 0.5rem;
+        min-width: 95vw;
+        max-width: 95vw;
+        flex: 0 0 95vw;
+        height: 160px;
     }
     .about-text {
         padding: 1rem 0.5rem;
@@ -475,16 +431,103 @@ header.navbar:hover {
     .about-image img {
         max-width: 9rem;
     }
+    .projects-cards-row {
+        gap: 0.5rem;
+        padding: 1rem 1vw 1rem 1vw;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
     .cards-item {
-        width: 98vw;
         min-width: 98vw;
         max-width: 98vw;
-        flex-basis: 98vw;
+        flex: 0 0 98vw;
+        height: 120px;
     }
 }
 
-a {
-    text-decoration: none;
+/* --- TECHNOLOGIES SECTION --- */
+.tech-section {
+    margin: 3rem auto 0 auto;
+    max-width: 1100px;
+    text-align: center;
+}
+.tech-intro {
+    color: #eaeaea;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Lora', serif;
+}
+.tech-filters {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+.tech-filter {
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 1px;
+}
+.tech-filter.active,
+.tech-filter:hover {
+    background: orange;
+    color: #fff;
+}
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.2rem 2.2rem;
+}
+.tech-hex {
+    width: 110px;
+    height: 125px;
+    background: #23273a;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: relative;
+    opacity: 1;
+}
+.tech-hex img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+    filter: grayscale(0.3) brightness(0.95);
+    transition: filter 0.2s, transform 0.2s;
+}
+.tech-hex span {
+    color: #eaeaea;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0.2rem;
+    letter-spacing: 1px;
+}
+.tech-hex:hover {
+    background: #ffd700;
+    transform: translateY(-10px) scale(1.07);
+    box-shadow: 0 0 24px #ffd70055;
+    z-index: 2;
+}
+.tech-hex:hover img {
+    filter: none;
+    transform: scale(1.15) rotate(-7deg);
+}
+.tech-hex:hover span {
+    color: #232323;
+    font-weight: bold;
 }
 
 /* --- MESSAGE FORM --- */
@@ -690,92 +733,4 @@ a {
 
 a {
     text-decoration: none;
-}
-
-/* --- TECHNOLOGIES SECTION --- */
-.tech-section {
-    margin: 3rem auto 0 auto;
-    max-width: 1100px;
-    text-align: center;
-}
-.tech-intro {
-    color: #eaeaea;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Lora', serif;
-}
-.tech-filters {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-}
-.tech-filter {
-    background: none;
-    border: none;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    padding: 0.7rem 2.5rem;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    letter-spacing: 1px;
-}
-.tech-filter.active,
-.tech-filter:hover {
-    background: orange;
-    color: #fff;
-}
-.tech-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.2rem 2.2rem;
-}
-.tech-hex {
-    width: 110px;
-    height: 125px;
-    background: #23273a;
-    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    position: relative;
-    opacity: 1;
-}
-.tech-hex img {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 0.5rem;
-    filter: grayscale(0.3) brightness(0.95);
-    transition: filter 0.2s, transform 0.2s;
-}
-.tech-hex span {
-    color: #eaeaea;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0.2rem;
-    letter-spacing: 1px;
-}
-.tech-hex:hover {
-    background: #ffd700;
-    transform: translateY(-10px) scale(1.07);
-    box-shadow: 0 0 24px #ffd70055;
-    z-index: 2;
-}
-.tech-hex:hover img {
-    filter: none;
-    transform: scale(1.15) rotate(-7deg);
-}
-.tech-hex:hover span {
-    color: #232323;
-    font-weight: bold;
-}
-@media (max-width: 900px) {
-   
 }
