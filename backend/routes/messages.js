@@ -15,14 +15,5 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Route to retrieve all messages (optional)
-router.get('/', async (req, res) => {
-    try {
-        const messages = await Message.find();
-        res.status(200).json(messages);
-    } catch (error) {
-        res.status(500).json({ success: false, message: 'Failed to retrieve messages.' });
-    }
-});
 
 module.exports = router;
