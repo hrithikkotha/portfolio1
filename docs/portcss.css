@@ -4,7 +4,8 @@
     margin: 0;
     padding: 0;
 }
-.title{
+
+.title {
     cursor: pointer;
 }
 
@@ -39,7 +40,7 @@ header.navbar {
     align-items: center;
     padding: 0 2.5rem;
     z-index: 1000;
-    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.25);
     border-bottom: 1px solid #333;
     backdrop-filter: blur(8px);
     transition: background 0.3s;
@@ -65,6 +66,7 @@ header.navbar:hover {
     0% {
         text-shadow: 0 0 8px #ffd70088, 0 0 16px #ffd70044;
     }
+
     100% {
         text-shadow: 0 0 24px #ffd700, 0 0 48px #ffd70088;
     }
@@ -148,13 +150,14 @@ header.navbar:hover {
     animation: fadeInUp 1.5s ease forwards;
     transition: opacity 0.5s ease;
     z-index: 1;
-    background: rgba(30,30,30,0.35);
+    background: rgba(30, 30, 30, 0.35);
     border-radius: 1.2rem;
     padding: 2rem 2.5rem;
-    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.04);
-    border: 1.5px solid rgba(255,215,0,0.08);
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.04);
+    border: 1.5px solid rgba(255, 215, 0, 0.08);
     backdrop-filter: blur(2px);
 }
+
 .about-text.animated {
     animation: fadeInUp 1.5s ease forwards;
     opacity: 1;
@@ -165,6 +168,7 @@ header.navbar:hover {
         opacity: 0;
         transform: translateY(40px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -188,7 +192,7 @@ header.navbar:hover {
     transition: filter 0.3s, box-shadow 0.3s;
     position: relative;
     left: 11rem;
-    top:8rem;
+    top: 8rem;
 }
 
 .about-image img:hover {
@@ -196,8 +200,27 @@ header.navbar:hover {
     box-shadow: 0 0 24px #ffd70055, 0 0 8px gold;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: fixed;
+    top: 1.2rem;
+    right: 2rem;
+    z-index: 2100;
+
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: gold;
+    border-radius: 2px;
+}
+
 .highlight {
-    color: gold;
+    color: rgb(250, 250, 250);
     font-weight: bold;
     letter-spacing: 1.5px;
     text-shadow: none;
@@ -252,6 +275,7 @@ header.navbar:hover {
     height: 8px;
     background: #232323;
 }
+
 .projects-cards-row::-webkit-scrollbar-thumb {
     background: #ffd70088;
     border-radius: 4px;
@@ -262,14 +286,14 @@ header.navbar:hover {
     max-width: 260px;
     flex: 0 0 320px;
     height: 360px;
-    background: rgba(30,30,30,0.92);
+    background: rgba(30, 30, 30, 0.92);
     border-radius: 1.2rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1.5px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     margin: 0 0 0 3rem;
     display: flex;
     flex-direction: column;
-   align-items: flex-end;
+    align-items: flex-end;
     /* justify-content:center; */
     border: none;
     position: relative;
@@ -299,14 +323,22 @@ header.navbar:hover {
     justify-content: center;
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(24, 24, 31, 0.97);
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border-radius: 1.2rem;
     text-align: center;
     z-index: 2;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-shadow: 0 2px 8px #18181f, 0 0 2px #000;
+    box-sizing: border-box;
+    overflow: auto; /* Ensures content is scrollable if too large */
+    overflow-wrap: break-word; /* Prevents text overflow */
 }
 
 .cards-item:hover img {
@@ -314,7 +346,8 @@ header.navbar:hover {
     opacity: 0.5;
 }
 
-.cards-item:hover .card-desc {
+.cards-item:hover .card-desc,
+.cards-item:focus-within .card-desc {
     opacity: 1;
 }
 
@@ -345,80 +378,137 @@ header.navbar:hover {
 
 /* --- RESPONSIVE PROJECTS --- */
 @media (max-width: 1100px) {
+    .projects-cards-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
     .cards-item {
-        min-width: 260px;
-        max-width: 260px;
-        flex: 0 0 260px;
-        height: 280px;
+        min-width: 220px;
+        max-width: 220px;
+        width: 220px;
+        height: 240px;
+        /* or your desired height */
+        min-height: 240px;
+        max-height: 240px;
+        flex: 0 0 220px;
+        margin: 0;
+        align-items: center;
+    }
+
+    .card-desc {
+        font-size: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
     }
 }
 
 @media (max-width: 900px) {
     .projects-cards-row {
-        gap: 1.2rem;
-        padding: 2rem 2vw 2rem 2vw;
-        overflow-x: auto;
+        flex-direction: column;
         flex-wrap: nowrap;
+        gap: 1.5rem;
+        align-items: center;
+        padding: 1rem 0;
+        overflow-x: unset;
     }
+
     .cards-item {
-        min-width: 80vw;
-        max-width: 80vw;
-        flex: 0 0 80vw;
-        height: 220px;
+        min-width: 200px;
+        max-width: 200px;
+        width: 200px;
+        height: 240px;
+        /* or your desired height */
+        min-height: 240px;
+        max-height: 240px;
+        flex: 0 0 200px;
+        margin: 0;
+        align-items: center;
+    }
+
+    .card-desc {
+        font-size: 1rem;
+        padding: 1rem 0.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar nav {
-        display: none;
-    }
-    .menu-toggle {
-        display: flex;
-    }
+
+
     .about {
         flex-direction: column;
         text-align: center;
         align-items: center;
         padding: 6rem 2rem;
     }
+
     .about-text {
         text-align: center;
         padding: 1.5rem 1rem;
     }
+
     .about-image img {
         max-width: 12rem;
         left: 0;
         top: 0;
     }
+
     .projects-cards-row {
-        gap: 1rem;
-        padding: 1rem 2vw 1rem 2vw;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        gap: 1.2rem;
+        padding: 0.5rem 0;
     }
+
     .cards-item {
-        min-width: 90vw;
-        max-width: 90vw;
-        flex: 0 0 90vw;
-        height: 180px;
+        min-width: 170px;
+        max-width: 170px;
+        width: 170px;
+        height: 240px;
+        /* or your desired height */
+        min-height: 240px;
+        max-height: 240px;
+        flex: 0 0 170px;
+    }
+
+    .card-desc {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.2rem;
     }
 }
 
 @media (max-width: 600px) {
     .projects-cards-row {
         gap: 1rem;
-        padding: 1rem 2vw 1rem 2vw;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        padding: 0.5rem 0;
     }
+
     .cards-item {
-        min-width: 95vw;
-        max-width: 95vw;
-        flex: 0 0 95vw;
-        height: 160px;
+        min-width: 140px;
+        max-width: 170px;
+        width: 170px;
+        height: 240px;
+        /* or your desired height */
+        min-height: 240px;
+        max-height: 240px;
+        flex: 0 0 140px;
     }
+
     .about-text {
         padding: 1rem 0.5rem;
+    }
+
+    .card-desc {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.2rem;
     }
 }
 
@@ -426,24 +516,36 @@ header.navbar:hover {
     .navbar h3 {
         font-size: 1.2rem;
     }
+
     .navbar-option {
         font-size: 0.9rem;
     }
+
     .about-image img {
         max-width: 9rem;
     }
+
     .projects-cards-row {
-        gap: 0.5rem;
-        padding: 1rem 1vw 1rem 1vw;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        gap: 0.7rem;
+        padding: 0.3rem 0;
     }
+
     .cards-item {
-        min-width: 98vw;
-        max-width: 98vw;
-        flex: 0 0 98vw;
-        height: 120px;
+        min-width: 110px;
+        max-width: 170px;
+        width: 170px;
+        height: 240px;
+        /* or your desired height */
+        min-height: 240px;
+        max-height: 240px;
+        flex: 0 0 110px;
     }
+
+    .card-desc {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.1rem;
+    }
+
 }
 
 /* --- TECHNOLOGIES SECTION --- */
@@ -452,12 +554,14 @@ header.navbar:hover {
     max-width: 1100px;
     text-align: center;
 }
+
 .tech-intro {
     color: #eaeaea;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     font-family: 'Lora', serif;
 }
+
 .tech-filters {
     display: flex;
     justify-content: center;
@@ -465,6 +569,7 @@ header.navbar:hover {
     margin-bottom: 2.5rem;
     flex-wrap: wrap;
 }
+
 .tech-filter {
     background: none;
     border: none;
@@ -477,17 +582,20 @@ header.navbar:hover {
     transition: background 0.2s, color 0.2s;
     letter-spacing: 1px;
 }
+
 .tech-filter.active,
 .tech-filter:hover {
     background: orange;
     color: #fff;
 }
+
 .tech-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.2rem 2.2rem;
 }
+
 .tech-hex {
     width: 110px;
     height: 125px;
@@ -498,10 +606,11 @@ header.navbar:hover {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     position: relative;
     opacity: 1;
 }
+
 .tech-hex img {
     width: 48px;
     height: 48px;
@@ -509,6 +618,7 @@ header.navbar:hover {
     filter: grayscale(0.3) brightness(0.95);
     transition: filter 0.2s, transform 0.2s;
 }
+
 .tech-hex span {
     color: #eaeaea;
     font-size: 1rem;
@@ -516,16 +626,19 @@ header.navbar:hover {
     margin-top: 0.2rem;
     letter-spacing: 1px;
 }
+
 .tech-hex:hover {
     background: #ffd700;
     transform: translateY(-10px) scale(1.07);
     box-shadow: 0 0 24px #ffd70055;
     z-index: 2;
 }
+
 .tech-hex:hover img {
     filter: none;
     transform: scale(1.15) rotate(-7deg);
 }
+
 .tech-hex:hover span {
     color: #232323;
     font-weight: bold;
@@ -560,11 +673,11 @@ header.navbar:hover {
     gap: 1.2rem;
     width: 100%;
     max-width: 28rem;
-    background: rgba(30,30,30,0.55);
+    background: rgba(30, 30, 30, 0.55);
     border-radius: 1.2rem;
     padding: 2rem 2.5rem;
-    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.04);
-    border: 1.5px solid rgba(255,215,0,0.08);
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.04);
+    border: 1.5px solid rgba(255, 215, 0, 0.08);
     backdrop-filter: blur(2px);
 }
 
@@ -637,7 +750,7 @@ header.navbar:hover {
 }
 
 .contact-items-card {
-    background: rgba(30,30,30,0.85);
+    background: rgba(30, 30, 30, 0.85);
     padding: 1.2rem 2rem;
     border-radius: 1rem;
     display: flex;
@@ -649,7 +762,7 @@ header.navbar:hover {
     font-size: 1.08rem;
     font-family: 'Montserrat', sans-serif;
     box-shadow: none;
-    border: 1.5px solid rgba(255,215,0,0.08);
+    border: 1.5px solid rgba(255, 215, 0, 0.08);
 }
 
 .contact-items-card:hover {
@@ -670,14 +783,14 @@ header.navbar:hover {
     font-size: 1rem;
     color: gold;
     border-top: 1px solid #333;
-    background: rgba(30,30,30,0.85);
+    background: rgba(30, 30, 30, 0.85);
     letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
     box-shadow: none;
 }
 
 /* --- SIDEBAR & MENU --- */
-.menu-toggle {
+/* .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -694,7 +807,7 @@ header.navbar:hover {
     background-color: gold;
     border-radius: 2px;
     box-shadow: none;
-}
+} */
 
 .sidebar {
     position: fixed;
@@ -702,7 +815,7 @@ header.navbar:hover {
     right: -250px;
     height: 100%;
     width: 200px;
-    background: rgba(30,30,30,0.98);
+    background: rgba(30, 30, 30, 0.98);
     display: flex;
     flex-direction: column;
     padding: 4rem 1rem;
@@ -710,7 +823,7 @@ header.navbar:hover {
     transition: right 0.3s ease;
     z-index: 1050;
     box-shadow: none;
-    border-left: 1.5px solid #ffd700cc;
+    border-left: 1.5px solid #000;
 }
 
 .sidebar.open {
@@ -718,7 +831,7 @@ header.navbar:hover {
 }
 
 .sidebar a {
-    color: gold;
+    color: rgb(252, 252, 252);
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s;
@@ -728,7 +841,7 @@ header.navbar:hover {
 }
 
 .sidebar a:hover {
-    color: #fff;
+    color: gold;
     text-shadow: none;
 }
 
