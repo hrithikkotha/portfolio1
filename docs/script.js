@@ -5,33 +5,45 @@ document.querySelector('a[href="#about"]').addEventListener('click', () => {
     aboutText.classList.add('animated');
 });
 
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
+function showFlashMessage(message, type = 'success') {
+    const flashDiv = document.getElementById('flash-message');
+    flashDiv.className = `flash-message ${type}`;
+    flashDiv.innerHTML = `
+        <span>${message}</span>
+        <button class="close-btn" onclick="hideFlashMessage()">&times;</button>
+    `;
+    flashDiv.style.display = 'flex';
+    setTimeout(hideFlashMessage, 4000);
+}
+function hideFlashMessage() {
+    const flashDiv = document.getElementById('flash-message');
+    flashDiv.style.display = 'none';
+    flashDiv.innerHTML = '';
+}
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    
-    const formData = {
-        name: this.name.value,
-        email: this.email.value,
-        message: this.message.value
+    const form = e.target;
+    const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
     };
-
     try {
-        const response = await fetch('/api/messages', {
+        const res = await fetch('/api/messages', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
         });
-
-        if (response.ok) {
-            alert('Message Sent!');
-            this.reset();
+        const result = await res.json();
+        if (result.success) {
+            showFlashMessage(result.message, 'success');
+            form.reset();
         } else {
-            alert('Error sending message. Please try again.');
+            showFlashMessage(result.message, 'error');
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error sending message. Please try again.');
+    } catch (err) {
+        showFlashMessage('Something went wrong. Please try again.', 'error');
     }
 });
 

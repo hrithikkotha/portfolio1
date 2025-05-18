@@ -4,14 +4,12 @@ const Message = require('../models/Message');
 
 // Route to handle feedback form submission
 router.post('/', async (req, res) => {
-    const { name, email, message } = req.body;
-
     try {
-        const newMessage = new Message({ name, email, message });
-        await newMessage.save();
-        res.status(201).json({ success: true, message: 'Message sent successfully!' });
-    } catch (error) {
-        res.status(500).json({ success: false, message: 'Failed to send message.' });
+        const { name, email, message } = req.body;
+        await Message.create({ name, email, message });
+        return res.status(200).json({ success: true, message: 'Message sent successfully!' });
+    } catch (err) {
+        return res.status(500).json({ success: false, message: 'Failed to send message. Please try again.' });
     }
 });
 

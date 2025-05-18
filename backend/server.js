@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../docs')));
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { 
     useNewUrlParser: true, 
@@ -25,12 +26,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Routes
 app.use('/api/messages', messageRoutes);
 
+// Serve frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../docs', 'index.html'));
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 console.log('MONGODB_URI:', process.env.MONGODB_URI);
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../docs', 'index.html'));
-});
