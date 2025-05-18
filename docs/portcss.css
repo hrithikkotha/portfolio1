@@ -728,7 +728,7 @@ header.navbar:hover {
 .contact {
     padding: 8rem 2rem;
     text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
     scroll-snap-align: start;
     background: linear-gradient(120deg, #18181f 0%, #232323 100%);
     box-shadow: 0 0 80px 0 #222 inset;

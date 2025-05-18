@@ -64,14 +64,35 @@ document.addEventListener("click", function (event) {
 });
 
 // Only apply smooth scroll to navbar/sidebar links, not all anchors
+function smoothScrollTo(target, duration = 1200) {
+    const start = window.scrollY;
+    const end = target.getBoundingClientRect().top + window.scrollY;
+    const change = end - start;
+    const startTime = performance.now();
+
+    function animateScroll(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease in-out cubic
+        const ease = progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        window.scrollTo(0, start + change * ease);
+        if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+        }
+    }
+    requestAnimationFrame(animateScroll);
+}
+
 document.querySelectorAll('a.navbar-option, .sidebar a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        // Only handle internal links
-        if (this.getAttribute('href').startsWith('#')) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                smoothScrollTo(target, 1200); // 1200ms = 1.2s, adjust as desired
             }
         }
     });
