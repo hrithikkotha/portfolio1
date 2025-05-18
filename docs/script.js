@@ -1,8 +1,14 @@
-document.querySelector('a[href="#about"]').addEventListener('click', () => {
-    const aboutText = document.querySelector('.about-text');
-    aboutText.classList.remove('animated');
-    void aboutText.offsetWidth; // force reflow to restart animation
-    aboutText.classList.add('animated');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                smoothScrollTo(target, 1200); // 1200ms = 1.2s, adjust as desired
+            }
+        }
+    });
 });
 
 function showFlashMessage(message, type = 'success') {

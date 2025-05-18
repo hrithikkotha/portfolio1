@@ -1,4 +1,4 @@
-/* --- RESET & BASE --- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -356,7 +356,7 @@ header.navbar:hover {
 
 .cards-item .card-desc h4 {
     display: block;
-    color: gold;
+    color: rgb(121, 212, 252);
     font-size: 1.1rem;
     margin-bottom: 0.7rem;
     font-family: 'Montserrat', sans-serif;
@@ -367,7 +367,7 @@ header.navbar:hover {
 
 .cards-item .card-desc p {
     display: block;
-    color: #ffe066;
+    color: #fcfcfb;
     font-size: 1rem;
     font-family: 'Lora', serif;
     margin-bottom: 0.5rem;
@@ -619,7 +619,7 @@ header.navbar:hover {
     height: 48px;
     margin-bottom: 0.5rem;
     filter: grayscale(0.3) brightness(0.95);
-    transition: filter 0.2s, transform 0.2s;
+    transition: filter 0.2s, transform 1s;
 }
 
 .tech-hex span {
@@ -639,7 +639,7 @@ header.navbar:hover {
 
 .tech-hex:hover img {
     filter: none;
-    transform: scale(1.15) rotate(-7deg);
+    transform: scale(1.15) rotate(-360deg);
 }
 
 .tech-hex:hover span {
@@ -661,7 +661,7 @@ header.navbar:hover {
 }
 
 .message h3 {
-    color: gold;
+    color: rgb(250, 250, 249);
     font-size: 2rem;
     letter-spacing: 1.5px;
     margin-bottom: 1.5rem;
@@ -736,7 +736,7 @@ header.navbar:hover {
 
 .contact h3 {
     font-size: 2rem;
-    color: gold;
+    color: rgb(255, 255, 254);
     letter-spacing: 1.5px;
     margin-bottom: 2rem;
     font-family: 'Montserrat', sans-serif;
