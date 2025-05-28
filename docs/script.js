@@ -1,3 +1,27 @@
+
+
+
+function showAboutModal() {
+    document.getElementById('about-modal').classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+}
+function hideAboutModal() {
+    document.getElementById('about-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Optional: Close modal on outside click
+document.addEventListener('click', function (e) {
+    const modal = document.getElementById('about-modal');
+    if (modal.classList.contains('active') && !modal.querySelector('.about-modal-content').contains(e.target) && !e.target.classList.contains('read-more-btn')) {
+        hideAboutModal();
+    }
+});
+
+
+
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -27,7 +51,7 @@ function hideFlashMessage() {
     flashDiv.innerHTML = '';
 }
 
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
     const form = e.target;
     const data = {
@@ -131,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Technology filter logic
 document.querySelectorAll('.tech-filter').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         document.querySelectorAll('.tech-filter').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         const filter = this.getAttribute('data-filter');
