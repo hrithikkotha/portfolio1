@@ -197,18 +197,21 @@ header.navbar {
 
 .social-icons {
     display: flex;
-    gap: 0.6rem;
+    gap: 1.2rem;
     margin-top: 0.3rem;
-    margin-bottom:0.3rem;
+    margin-bottom: 0.3rem;
     justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    position: static;
 }
 
 .icon-small {
     width: 28px;
     height: 28px;
     vertical-align: middle;
-    filter:none;
-    transition: filter 0.2s, transform 0.2s;
+    filter: none;
+    transition: transform 0.2s;
 }
 
 .social-icons a:hover .icon-small {
@@ -928,6 +931,12 @@ a {
     .menu-toggle {
         display: flex;
     }
+    .social-icons {
+        gap: 0.4rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        /* justify-content: center; */
+    }
 }
 
 @media (max-width: 900px) {
@@ -953,6 +962,12 @@ a {
     .card-desc {
         font-size: 1rem;
         padding: 1rem 0.5rem;
+    }
+    .social-icons {
+        gap: 0.4rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        /* justify-content: center; */
     }
 }
 
@@ -989,6 +1004,12 @@ a {
         font-size: 0.95rem;
         padding: 0.7rem 0.2rem;
     }
+    .social-icons {
+        gap: 0.4rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1011,6 +1032,12 @@ a {
     .card-desc {
         font-size: 0.95rem;
         padding: 0.7rem 0.2rem;
+    }
+    .social-icons {
+        gap: 0.3rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        justify-content: center;
     }
 }
 
@@ -1040,5 +1067,11 @@ a {
     .card-desc {
         font-size: 0.9rem;
         padding: 0.5rem 0.1rem;
+    }
+    .social-icons {
+        gap: 0.3rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        justify-content: center;
     }
 }
