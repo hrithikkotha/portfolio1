@@ -67,7 +67,24 @@ header.navbar {
 }
 
 
+#greeting-text {
+    display: inline-block;
+    min-width: 8.5em; /* Adjust as needed for the widest greeting */
+    min-height: 2.2em; /* Ensures enough height for both greetings */
+    text-align: left;
+    white-space: pre;
+    vertical-align: middle;
+    position: relative;
+}
 
+/* Pseudo-element to reserve space for the longest greeting */
+#greeting-text::after {
+    content: "నమస్తే!"; /* The widest greeting */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
 
 
 .navbar h3 a {
@@ -177,6 +194,7 @@ header.navbar {
     box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.04);
     border: 1.5px solid rgba(255, 215, 0, 0.08);
     backdrop-filter: blur(2px);
+    
 }
 
 .about-text.animated {
@@ -204,6 +222,7 @@ header.navbar {
     align-items: center;
     flex-wrap: wrap;
     position: static;
+    opacity:0.7;
 }
 
 .icon-small {
@@ -217,6 +236,10 @@ header.navbar {
 .social-icons a:hover .icon-small {
     
     transform: scale(1.15);
+    /* opacity:1; */
+}
+.social-icons:hover{
+    opacity:1;
 }
 
 .about-image {
@@ -1072,7 +1095,8 @@ a {
         flex: 0 0 140px;
     }
     .about-text {
-        padding: 1rem 0.5rem;
+       text-align: center;
+        padding: 1.5rem 1rem;
     }
     .card-desc {
         font-size: 0.95rem;
@@ -1132,7 +1156,7 @@ a {
         gap: 0.3rem;
         margin-top: 0.1rem;
         margin-bottom: 0.1rem;
-        justify-content: center;
+        justify-content: left;
     }
      .about-modal {
         padding: 1vh 0;
@@ -1148,5 +1172,9 @@ a {
         top: 0.1rem;
         right: 0.2rem;
         font-size: 2.1rem;
+    }
+     .about-text {
+       text-align: left;
+        padding: 1.5rem 1rem;
     }
 }

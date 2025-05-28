@@ -174,3 +174,34 @@ document.querySelectorAll('.sidebar a').forEach(link => {
         document.getElementById('sidebar').classList.remove('open');
     });
 });
+
+// Add this to your script.js (at the end or after DOMContentLoaded)
+document.addEventListener("DOMContentLoaded", function () {
+    const greetings = ["HELLO!", "నమస్తే!"];
+    let idx = 0;
+    const greetingEl = document.getElementById("greeting-text");
+
+    function typeGreeting(text, cb) {
+        greetingEl.textContent = "";
+        let i = 0;
+        function type() {
+            if (i <= text.length) {
+                greetingEl.textContent = text.slice(0, i);
+                i++;
+                setTimeout(type, 350); // Adjust speed here (ms per letter)
+            } else if (cb) {
+                setTimeout(cb, 900); // Pause before next greeting
+            }
+        }
+        type();
+    }
+
+    function loopGreetings() {
+        typeGreeting(greetings[idx], () => {
+            idx = (idx + 1) % greetings.length;
+            loopGreetings();
+        });
+    }
+
+    loopGreetings();
+});
