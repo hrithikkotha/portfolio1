@@ -1011,7 +1011,7 @@ a {
         gap: 0.4rem;
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
-        /* justify-content: center; */
+        justify-content: center;
     }
    .about-modal-content {
         padding: 1.2rem 0.7rem;
@@ -1024,6 +1024,35 @@ a {
         top: 0.6rem;
         right: 0.6rem;
         font-size: 2rem;
+    }
+     .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 6rem 1rem 2rem 1rem;
+    }
+    .about-image {
+        order: -1; /* Move image above text */
+        margin-bottom: 1.2rem;
+        left: 0 !important;
+        top: 0 !important;
+        position: static !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .about-image img {
+        left: 0 !important;
+        top: 0 !important;
+        position: static !important;
+        margin: 0 auto;
+        max-width: 12rem;
+    }
+    .about-text {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.2rem 0.7rem;
+        text-align: center;
     }
 }
 
