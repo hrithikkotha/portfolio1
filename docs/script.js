@@ -18,7 +18,13 @@ document.addEventListener('click', function (e) {
     }
 });
 
-
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        // Duplicate the cards for seamless looping
+        track.innerHTML += track.innerHTML;
+    }
+});
 
 
 

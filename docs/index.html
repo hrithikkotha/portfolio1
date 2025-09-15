@@ -1,237 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@100;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="portcss.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@100;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="portcss.css" />
     <title>HRITHIK KOTHA</title>
-    <link rel="icon" href="./assets/hrithik-icon.png">
-</head>
+    <link rel="icon" href="./assets/hrithik-icon.png" />
+  </head>
 
-<body>
-
+  <body>
     <video id="bg-video" autoplay muted loop playsinline>
-        <source src="assets/background.mp4" type="video/mp4">
-        <!-- Optional fallback for .mov if you want -->
-        Your browser does not support the video tag.
+      <source src="assets/background.mp4" type="video/mp4" />
+      <!-- Optional fallback for .mov if you want -->
+      Your browser does not support the video tag.
     </video>
     <header class="navbar">
-        <h3> <a href="#about"> HRITHIK</a></h3>
-        <nav>
-            <a href="#about" class="navbar-option">About</a>
-            <a href="#projects" class="navbar-option">Projects</a>
-            <a href="./assets/HRITHIK_RESUME.pdf" class="navbar-option" target="_blank">Resume</a>
-            <a href="#message" class="navbar-option">Message</a>
-            <a href="#contact" class="navbar-option">Contact</a>
-        </nav>
+      <h3><a href="#about"> HRITHIK</a></h3>
+      <nav>
+        <a href="#about" class="navbar-option">About</a>
+        <a href="#projects" class="navbar-option">Projects</a>
+        <a
+          href="./assets/HRITHIK_RESUME.pdf"
+          class="navbar-option"
+          target="_blank"
+          >Resume</a
+        >
+        <a href="#message" class="navbar-option">Message</a>
+        <a href="#contact" class="navbar-option">Contact</a>
+      </nav>
     </header>
 
     <div class="menu-toggle" onclick="toggleSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
 
     <div class="sidebar" id="sidebar">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="./assets/HRITHIK_RESUME.pdf" target="_blank">Resume</a>
-        <a href="#message">Message</a>
-        <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="./assets/HRITHIK_RESUME.pdf" target="_blank">Resume</a>
+      <a href="#message">Message</a>
+      <a href="#contact">Contact</a>
     </div>
 
     <main class="mainbar">
+      <!-- About Section (short preview) -->
+      <section class="about" id="about">
+        <div class="about-text">
+          <h2 id="greeting-text">HELLO!</h2>
+          <h2>I AM <span class="highlight">HRITHIK KOTHA</span></h2>
 
-        <!-- About Section (short preview) -->
-        <section class="about" id="about">
-            <div class="about-text">
-                <h2 id="greeting-text">HELLO!</h2>
-                <h2>I AM <span class="highlight">HRITHIK KOTHA</span></h2>
-
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/hrithik-kotha-b7914b230" target="_blank" aria-label="LinkedIn">
-                        <img src="assets/linkedin.png" alt="LinkedIn" class="icon-small">
-                    </a>
-                    <a href="https://github.com/hrithikkotha" target="_blank" aria-label="GitHub">
-                        <img src="assets/github.png" alt="GitHub" class="icon-small">
-                    </a>
-                </div>
-                <br />
-                <p><strong>🚀 Aspiring Software Engineer | Problem Solver | Tech Enthusiast</strong></p>
-                <p>
-                    I am a dedicated and enthusiastic software developer with a strong foundation in Data Structures and
-                    Algorithms (DSA), backed by solid programming skills in C++ and Java.
-                </p>
-                <button class="read-more-btn" onclick="showAboutModal()">Read More</button>
-            </div>
-            <div class="about-image">
-                <img src="./assets/profile.jpg" alt="Hrithik Kotha">
-            </div>
-        </section>
-
-        <!-- Modal Card for Full About Text -->
-        <div id="about-modal" class="about-modal">
-            <div class="about-modal-content">
-                <button class="about-modal-close" onclick="hideAboutModal()">&times;</button>
-                <h2>About Me</h2>
-                <p>
-                    <strong>🚀 Aspiring Software Engineer | Problem Solver | Tech Enthusiast</strong>
-                </p>
-                <p>
-                    I am a dedicated and enthusiastic software developer with a strong foundation in Data Structures and
-                    Algorithms (DSA), backed by solid programming skills in C++ and Java. I thrive on solving complex
-                    algorithmic problems and writing optimized, efficient code.
-                </p>
-                <p>
-                    Beyond competitive programming, I bring hands-on experience in Mern-stack web development, having
-                    built dynamic and responsive applications using HTML, CSS, JavaScript, Node.js, Express.js,
-                    React.js, and MongoDB. I follow a clean coding philosophy, focusing on maintainability, performance,
-                    and scalability in everything I build.
-                </p>
-                <p>
-                    As a continuous learner and tech enthusiast, I’m always exploring new technologies and sharpening my
-                    skills to stay ahead in the fast-evolving software landscape. I'm now looking for exciting
-                    opportunities to contribute, learn, and grow as a developer.
-                </p>
-            </div>
+          <div class="social-icons">
+            <a
+              href="https://www.linkedin.com/in/hrithik-kotha-b7914b230"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="assets/linkedin.png"
+                alt="LinkedIn"
+                class="icon-small"
+              />
+            </a>
+            <a
+              href="https://github.com/hrithikkotha"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img src="assets/github.png" alt="GitHub" class="icon-small" />
+            </a>
+          </div>
+          <br />
+          <p>
+            <strong
+              >🚀 Aspiring Software Engineer | Problem Solver | Tech
+              Enthusiast</strong
+            >
+          </p>
+          <p>
+            I am a dedicated and enthusiastic software developer with a strong
+            foundation in Data Structures and Algorithms (DSA), backed by solid
+            programming skills in C++ and Java.
+          </p>
+          <button class="read-more-btn" onclick="showAboutModal()">
+            Read More
+          </button>
         </div>
-
-
-
-
-        <!-- ...existing about section... -->
-        <div class="tech-section">
-            <p class="tech-intro">TECH STACK:</p>
-            <div class="tech-filters">
-                <button class="tech-filter active" data-filter="all">All</button>
-                <button class="tech-filter" data-filter="languages">Languages</button>
-                <button class="tech-filter" data-filter="frameworks">Frameworks</button>
-                <button class="tech-filter" data-filter="tools">Tools</button>
-            </div>
-            <div class="tech-grid">
-                <!-- Languages -->
-                <div class="tech-hex languages"><img src="assets/html.png" alt="HTML5"><span>HTML5</span></div>
-                <div class="tech-hex languages"><img src="assets/css-3.png" alt="CSS3"><span>CSS3</span></div>
-                <div class="tech-hex languages"><img src="assets/java-script.png"
-                        alt="JavaScript"><span>JavaScript</span></div>
-                <div class="tech-hex languages"><img src="assets/c++.png" alt="C++"><span>C++</span></div>
-                <div class="tech-hex languages"><img src="assets/java.png" alt="Java"><span>Java</span></div>
-                <!-- Frameworks -->
-                <div class="tech-hex frameworks"><img src="assets/react.png" alt="React"><span>React</span></div>
-                <div class="tech-hex frameworks"><img src="assets/nodejs.png" alt="Node.js"><span>Node.js</span>
-                </div>
-                <div class="tech-hex frameworks"><img src="assets/express.png" alt="Express"><span>Express</span>
-                </div>
-
-                <!-- Tools -->
-                <div class="tech-hex tools"><img src="assets/github.png" alt="GitHub"><span>GitHub</span></div>
-                <div class="tech-hex tools"><img src="assets/git.png" alt="Git"><span>Git</span></div>
-                <div class="tech-hex tools"><img src="assets/bootstrap.png" alt="Bootstrap"><span>Bootstrap</span>
-                </div>
-                <div class="tech-hex tools"><img src="assets/tailwind-css.svg" alt="Tailwind CSS"><span>Tailwind</span>
-                </div>
-                <div class="tech-hex tools"><img src="assets/mongodb-icon.svg" alt="MongoDB"><span>MongoDB</span>
-                </div>
-
-            </div>
+        <div class="about-image">
+          <img src="./assets/profile.jpg" alt="Hrithik Kotha" />
         </div>
+      </section>
 
+      <!-- Modal Card for Full About Text -->
+      <div id="about-modal" class="about-modal">
+        <div class="about-modal-content">
+          <button class="about-modal-close" onclick="hideAboutModal()">
+            &times;
+          </button>
+          <h2>About Me</h2>
+          <p>
+            <strong
+              >🚀 Aspiring Software Engineer | Problem Solver | Tech
+              Enthusiast</strong
+            >
+          </p>
+          <p>
+            I am a dedicated and enthusiastic software developer with a strong
+            foundation in Data Structures and Algorithms (DSA), backed by solid
+            programming skills in C++ and Java. I thrive on solving complex
+            algorithmic problems and writing optimized, efficient code.
+          </p>
+          <p>
+            Beyond competitive programming, I bring hands-on experience in
+            Mern-stack web development, having built dynamic and responsive
+            applications using HTML, CSS, JavaScript, Node.js, Express.js,
+            React.js, and MongoDB. I follow a clean coding philosophy, focusing
+            on maintainability, performance, and scalability in everything I
+            build.
+          </p>
+          <p>
+            As a continuous learner and tech enthusiast, I’m always exploring
+            new technologies and sharpening my skills to stay ahead in the
+            fast-evolving software landscape. I'm now looking for exciting
+            opportunities to contribute, learn, and grow as a developer.
+          </p>
+        </div>
+      </div>
 
-        <section class="projects" id="projects">
-            <h3>PROJECTS</h3>
+      <!-- ...existing about section... -->
+      <div class="tech-section">
+        <p class="tech-intro">TECH STACK:</p>
+        <div class="tech-filters">
+          <button class="tech-filter active" data-filter="all">All</button>
+          <button class="tech-filter" data-filter="languages">Languages</button>
+          <button class="tech-filter" data-filter="frameworks">
+            Frameworks
+          </button>
+          <button class="tech-filter" data-filter="tools">Tools</button>
+        </div>
+        <div class="tech-grid">
+          <!-- Languages -->
+          <div class="tech-hex languages">
+            <img src="assets/html.png" alt="HTML5" /><span>HTML5</span>
+          </div>
+          <div class="tech-hex languages">
+            <img src="assets/css-3.png" alt="CSS3" /><span>CSS3</span>
+          </div>
+          <div class="tech-hex languages">
+            <img src="assets/java-script.png" alt="JavaScript" /><span
+              >JavaScript</span
+            >
+          </div>
+          <div class="tech-hex languages">
+            <img src="assets/c++.png" alt="C++" /><span>C++</span>
+          </div>
+          <div class="tech-hex languages">
+            <img src="assets/java.png" alt="Java" /><span>Java</span>
+          </div>
+          <!-- Frameworks -->
+          <div class="tech-hex frameworks">
+            <img src="assets/react.png" alt="React" /><span>React</span>
+          </div>
+          <div class="tech-hex frameworks">
+            <img src="assets/nodejs.png" alt="Node.js" /><span>Node.js</span>
+          </div>
+          <div class="tech-hex frameworks">
+            <img src="assets/express.png" alt="Express" /><span>Express</span>
+          </div>
 
-            <div class="projects-cards-row">
-                <a href="https://rentsy.onrender.com/listings" target="_blank">
-                    <div class="cards-item">
-                        <img src="./assets/rentsy.png" alt="Rentsy Airbnb Clone">
-                        <div class="card-desc">
-                            <h4>RENTSY (Airbnb Clone)</h4>
-                            <p>
-                                MERN stack project inspired by Airbnb.<br>
-                                Users can list, search, and book rental properties.<br>
-                                BUILT USING MongoDB, Express, React, Node.js
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="cards-item">
-                        <img src="./assets/work.jpg" alt="Workout Tracker">
-                        <div class="card-desc">
-                            <h4>WORKOUT TRACKER</h4>
-                            <p>Full-stack app to log and track workouts.<br>BUILT USING HTML, CSS, PHP, SQL</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/hrithikkotha/spotify_clone/tree/main" target="_blank">
-                    <div class="cards-item">
-                        <img src="./assets/spotigy.webp" alt="Spotify Clone">
-                        <div class="card-desc">
-                            <h4>SPOTIFY CLONE</h4>
-                            <p>Frontend Spotify clone.<br>BUILT USING HTML, CSS</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://hrithikkotha.github.io/FlipCart-Clone/" target="_blank">
-                <div class="cards-item">
-                    <img src="./assets/flipkartimg.webp" alt="Flipcart-Clone WEBPAGE">
-                    <div class="card-desc">
-                        <h4>Flipcart-Clone WEBPAGE</h4>
-                        <p>Responsive FlipKart Webpage<br>BUILT USING HTML, CSS</p>
-                    </div>
+          <!-- Tools -->
+          <div class="tech-hex tools">
+            <img src="assets/github.png" alt="GitHub" /><span>GitHub</span>
+          </div>
+          <div class="tech-hex tools">
+            <img src="assets/git.png" alt="Git" /><span>Git</span>
+          </div>
+          <div class="tech-hex tools">
+            <img src="assets/bootstrap.png" alt="Bootstrap" /><span
+              >Bootstrap</span
+            >
+          </div>
+          <div class="tech-hex tools">
+            <img src="assets/tailwind-css.svg" alt="Tailwind CSS" /><span
+              >Tailwind</span
+            >
+          </div>
+          <div class="tech-hex tools">
+            <img src="assets/mongodb-icon.svg" alt="MongoDB" /><span
+              >MongoDB</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <section class="projects" id="projects">
+        <h3>PROJECTS</h3>
+
+        <div class="projects-cards-row carousel">
+          <div class="carousel-track">
+            <a href="https://rentsy.onrender.com/listings" target="_blank">
+              <div class="cards-item">
+                <img src="./assets/rentsy.png" alt="Rentsy Airbnb Clone" />
+                <div class="card-desc">
+                  <h4>RENTSY (Airbnb Clone)</h4>
+                  <p>
+                    MERN stack project inspired by Airbnb.<br />
+                    Users can list, search, and book rental properties.<br />
+                    BUILT USING MongoDB, Express, React, Node.js
+                  </p>
                 </div>
-                </a>
-                 <a href="https://hrithikkotha.github.io/Responsive-edTechpage/#" target="_blank">
-                <div class="cards-item">
-                    <img src="./assets/edtechproject.png" alt="EdTech WEBPAGE">
-                    <div class="card-desc">
-                        <h4>Edtech WEBPAGE</h4>
-                        <p>Responsive Edtech Webpage<br>BUILT USING HTML, CSS</p>
-                    </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="cards-item">
+                <img src="./assets/work.jpg" alt="Workout Tracker" />
+                <div class="card-desc">
+                  <h4>WORKOUT TRACKER</h4>
+                  <p>
+                    Full-stack app to log and track workouts.<br />BUILT USING
+                    HTML, CSS, PHP, SQL
+                  </p>
                 </div>
-                </a>
+              </div>
+            </a>
+            <a
+              href="https://github.com/hrithikkotha/spotify_clone/tree/main"
+              target="_blank"
+            >
+              <div class="cards-item">
+                <img src="./assets/spotigy.webp" alt="Spotify Clone" />
+                <div class="card-desc">
+                  <h4>SPOTIFY CLONE</h4>
+                  <p>Frontend Spotify clone.<br />BUILT USING HTML, CSS</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://hrithikkotha.github.io/FlipCart-Clone/"
+              target="_blank"
+            >
+              <div class="cards-item">
+                <img
+                  src="./assets/flipkartimg.webp"
+                  alt="Flipcart-Clone WEBPAGE"
+                />
+                <div class="card-desc">
+                  <h4>Flipcart-Clone WEBPAGE</h4>
+                  <p>Responsive FlipKart Webpage<br />BUILT USING HTML, CSS</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://hrithikkotha.github.io/Responsive-edTechpage/#"
+              target="_blank"
+            >
+              <div class="cards-item">
+                <img src="./assets/edtechproject.png" alt="EdTech WEBPAGE" />
+                <div class="card-desc">
+                  <h4>Edtech WEBPAGE</h4>
+                  <p>Responsive Edtech Webpage<br />BUILT USING HTML, CSS</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="message" id="message">
+        <h3>Send Me a Message</h3>
+        <div
+          id="flash-message"
+          class="flash-message"
+          style="display: none"
+        ></div>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="contact" id="contact">
+        <h3>CONTACT</h3>
+        <div class="contact-items">
+          <div class="contact-items-card">
+            <img src="./assets/gmail.png" alt="" /> hrithikkotha@gmail.com
+          </div>
+          <a
+            href="https://www.linkedin.com/in/hrithik-kotha-b7914b230"
+            target="_blank"
+          >
+            <div class="contact-items-card">
+              <img src="assets/linkedin.png" alt="" />LinkedIn
             </div>
-            
-        </section>
+          </a>
 
-        <section class="message" id="message">
-            <h3>Send Me a Message</h3>
-            <div id="flash-message" class="flash-message" style="display:none;"></div>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-
-        </section>
-
-        <section class="contact" id="contact">
-            <h3>CONTACT</h3>
-            <div class="contact-items">
-                <div class="contact-items-card"><img src="./assets/gmail.png" alt=""> hrithikkotha@gmail.com</div>
-                <a href="https://www.linkedin.com/in/hrithik-kotha-b7914b230" target="_blank">
-                    <div class="contact-items-card"><img src="assets/linkedin.png" alt="">LinkedIn</div>
-                </a>
-
-                <a href="https://www.instagram.com/hrithik_kotha18" target="_blank">
-                    <div class="contact-items-card"><img src="./assets/instagram.png" alt="">Instagram</div>
-                </a>
-                <div class="contact-items-card"><img src="./assets/phone-call.png" alt=""> +91 8919818056</div>
+          <a href="https://www.instagram.com/hrithik_kotha18" target="_blank">
+            <div class="contact-items-card">
+              <img src="./assets/instagram.png" alt="" />Instagram
             </div>
-        </section>
+          </a>
+          <div class="contact-items-card">
+            <img src="./assets/phone-call.png" alt="" /> +91 8919818056
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Hrithik Kotha. All rights reserved.</p>
+      <p>&copy; 2025 Hrithik Kotha. All rights reserved.</p>
     </footer>
 
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>

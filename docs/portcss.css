@@ -580,6 +580,42 @@ header.navbar {
 }
 
 
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-left 30s linear infinite;
+   
+}
+
+.carousel-track:hover,
+.carousel-track:has(.cards-item:hover) {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+.cards-item {
+    min-width: 300px;
+    flex: 0 0 auto;
+}
+
+
 /* TECH SECTION */
 
 .tech-section {
