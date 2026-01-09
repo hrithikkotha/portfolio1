@@ -1,25 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const Message = require('../models/Message');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
+console.log('DEBUG: RESEND_API_KEY =', process.env.RESEND_API_KEY ? 'set' : 'undefined');
 console.log('DEBUG: EMAIL_USER =', process.env.EMAIL_USER);
-console.log('DEBUG: EMAIL_PASS =', process.env.EMAIL_PASS);
 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Verify transporter when the module loads so issues appear in server logs early
-transporter.verify()
-    .then(() => console.log('Nodemailer transporter verified and ready'))
-    .catch(err => console.error('Nodemailer verification failed:', err));
+if (process.env.RESEND_API_KEY) {
+    console.log('Resend API key configured');
+} else {
+    console.warn('RESEND_API_KEY not configured - email sending will be disabled');
+}
 
 router.post('/', async (req, res) => {
     try {
@@ -34,20 +29,28 @@ router.post('/', async (req, res) => {
         // Save message to DB
         const saved = await Message.create({ name, email, message });
 
-        // If email credentials are not set, don't attempt to send email — return success about saved message
-        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-            console.warn('EMAIL_USER or EMAIL_PASS not configured. Message saved but email not sent.');
+        // If Resend API key is not set, don't attempt to send email — return success about saved message
+        if (!process.env.RESEND_API_KEY || !process.env.EMAIL_USER) {
+            console.warn('RESEND_API_KEY or EMAIL_USER not configured. Message saved but email not sent.');
             return res.status(200).json({ success: true, message: 'Message saved (email not sent — email not configured).' });
         }
 
-        // Try to send notification email
+        // Try to send notification email via Resend
         try {
-            await transporter.sendMail({
-                from: `"Portfolio Contact" <${email}>`,
+            await resend.emails.send({
+                from: 'onboarding@resend.dev',
                 to: process.env.EMAIL_USER,
-                subject: 'New Portfolio Message',
-                text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+                replyTo: email,
+                subject: 'New Portfolio Message from ' + name,
+                html: `
+                    <h2>New message from your portfolio contact form</h2>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Message:</strong></p>
+                    <p>${message.replace(/\n/g, '<br>')}</p>
+                `
             });
+            console.log('Email sent successfully via Resend');
         } catch (mailErr) {
             console.error('Error sending email notification:', mailErr);
             // Message is saved — inform client about email failure but return success for save
