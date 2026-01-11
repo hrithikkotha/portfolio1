@@ -250,16 +250,13 @@ header.navbar {
 }
 
 .about-image img {
-    max-width: 18rem;
+    max-width: clamp(10rem, 25vw, 18rem);
     border-radius: 50%;
     border: 3px solid gold;
     box-shadow: none;
     background: #18181f;
     filter: grayscale(10%) brightness(1.1);
     transition: filter 0.3s, box-shadow 0.3s;
-    position:relative;
-    left:150px;
-    top:40px;
 }
 
 .about-image img:hover {
