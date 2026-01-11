@@ -16,6 +16,17 @@
     background: #18181f;
 }
 
+@media (max-width: 768px) {
+    #bg-video {
+        display: none;
+    }
+
+    html {
+        background: linear-gradient(120deg, #18181f 0%, #232323 100%);
+        background-attachment: fixed;
+    }
+}
+
 
 * {
     box-sizing: border-box;
