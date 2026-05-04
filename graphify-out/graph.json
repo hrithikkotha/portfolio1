@@ -1,0 +1,1029 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "portfolio_frontend_skills",
+        "label": "Frontend Technologies",
+        "nodes": [
+          "skill_html5",
+          "skill_css3",
+          "skill_javascript",
+          "skill_react",
+          "skill_bootstrap",
+          "skill_tailwind"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "docs/index.html"
+      },
+      {
+        "id": "portfolio_backend_skills",
+        "label": "Backend Technologies",
+        "nodes": [
+          "skill_nodejs",
+          "skill_express",
+          "skill_mongodb"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "docs/index.html"
+      },
+      {
+        "id": "portfolio_mern_stack",
+        "label": "MERN Stack Projects",
+        "nodes": [
+          "project_fitforge",
+          "project_rentsy"
+        ],
+        "relation": "uses",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "docs/index.html"
+      },
+      {
+        "id": "portfolio_languages",
+        "label": "Programming Languages",
+        "nodes": [
+          "skill_cplusplus",
+          "skill_java",
+          "skill_javascript"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "docs/index.html"
+      },
+      {
+        "id": "portfolio_version_control",
+        "label": "Version Control Tools",
+        "nodes": [
+          "skill_git",
+          "skill_github"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "docs/index.html"
+      },
+      {
+        "id": "portfolio_css_frameworks",
+        "label": "CSS Framework & UI Libraries",
+        "nodes": [
+          "skill_bootstrap",
+          "skill_tailwind"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "docs/index.html"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "server.js",
+      "file_type": "code",
+      "source_file": "backend\\server.js",
+      "source_location": "L1",
+      "id": "backend_server_js",
+      "community": 5,
+      "norm_label": "server.js"
+    },
+    {
+      "label": "Message.js",
+      "file_type": "code",
+      "source_file": "backend\\models\\Message.js",
+      "source_location": "L1",
+      "id": "backend_models_message_js",
+      "community": 6,
+      "norm_label": "message.js"
+    },
+    {
+      "label": "messages.js",
+      "file_type": "code",
+      "source_file": "backend\\routes\\messages.js",
+      "source_location": "L1",
+      "id": "backend_routes_messages_js",
+      "community": 7,
+      "norm_label": "messages.js"
+    },
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L1",
+      "id": "docs_script_js",
+      "community": 1,
+      "norm_label": "script.js"
+    },
+    {
+      "label": "showAboutModal()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L4",
+      "id": "script_showaboutmodal",
+      "community": 1,
+      "norm_label": "showaboutmodal()"
+    },
+    {
+      "label": "hideAboutModal()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L8",
+      "id": "script_hideaboutmodal",
+      "community": 1,
+      "norm_label": "hideaboutmodal()"
+    },
+    {
+      "label": "showFlashMessage()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L44",
+      "id": "script_showflashmessage",
+      "community": 1,
+      "norm_label": "showflashmessage()"
+    },
+    {
+      "label": "hideFlashMessage()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L54",
+      "id": "script_hideflashmessage",
+      "community": 1,
+      "norm_label": "hideflashmessage()"
+    },
+    {
+      "label": "toggleSidebar()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L86",
+      "id": "script_togglesidebar",
+      "community": 1,
+      "norm_label": "togglesidebar()"
+    },
+    {
+      "label": "smoothScrollTo()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L103",
+      "id": "script_smoothscrollto",
+      "community": 1,
+      "norm_label": "smoothscrollto()"
+    },
+    {
+      "label": "typeGreeting()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L190",
+      "id": "script_typegreeting",
+      "community": 1,
+      "norm_label": "typegreeting()"
+    },
+    {
+      "label": "loopGreetings()",
+      "file_type": "code",
+      "source_file": "docs\\script.js",
+      "source_location": "L205",
+      "id": "script_loopgreetings",
+      "community": 1,
+      "norm_label": "loopgreetings()"
+    },
+    {
+      "label": "Hrithik Kotha",
+      "file_type": "document",
+      "source_file": "README.md",
+      "author": "Hrithik Kotha",
+      "type": "person",
+      "id": "person_hrithik_kotha",
+      "community": 0,
+      "norm_label": "hrithik kotha"
+    },
+    {
+      "label": "FIT FORGE",
+      "file_type": "image",
+      "source_file": "docs/assets/fitforge.jpg",
+      "description": "Full-stack application to track workouts and nutrition",
+      "type": "project",
+      "id": "project_fitforge",
+      "community": 2,
+      "norm_label": "fit forge"
+    },
+    {
+      "label": "RENTSY (Airbnb Clone)",
+      "file_type": "image",
+      "source_file": "docs/assets/rentsy.png",
+      "description": "MERN stack project inspired by Airbnb. Users can list, search, and book rental properties",
+      "type": "project",
+      "id": "project_rentsy",
+      "community": 2,
+      "norm_label": "rentsy (airbnb clone)"
+    },
+    {
+      "label": "TASK MANAGER",
+      "file_type": "image",
+      "source_file": "docs/assets/TaskManager.png",
+      "description": "Streamlined task management application for daily productivity with data persistence",
+      "type": "project",
+      "id": "project_taskmanager",
+      "community": 4,
+      "norm_label": "task manager"
+    },
+    {
+      "label": "SPOTIFY CLONE",
+      "file_type": "image",
+      "source_file": "docs/assets/spotigy.webp",
+      "description": "Frontend Spotify clone",
+      "type": "project",
+      "id": "project_spotify_clone",
+      "community": 3,
+      "norm_label": "spotify clone"
+    },
+    {
+      "label": "Flipcart-Clone WEBPAGE",
+      "file_type": "image",
+      "source_file": "docs/assets/flipkartimg.webp",
+      "description": "Responsive FlipKart Webpage",
+      "type": "project",
+      "id": "project_flipkart_clone",
+      "community": 3,
+      "norm_label": "flipcart-clone webpage"
+    },
+    {
+      "label": "EdTech WEBPAGE",
+      "file_type": "image",
+      "source_file": "docs/assets/edtechproject.png",
+      "description": "Responsive Edtech Webpage",
+      "type": "project",
+      "id": "project_edtech",
+      "community": 3,
+      "norm_label": "edtech webpage"
+    },
+    {
+      "label": "HTML5",
+      "file_type": "image",
+      "source_file": "docs/assets/html.png",
+      "type": "skill",
+      "id": "skill_html5",
+      "community": 3,
+      "norm_label": "html5"
+    },
+    {
+      "label": "CSS3",
+      "file_type": "image",
+      "source_file": "docs/assets/css-3.png",
+      "type": "skill",
+      "id": "skill_css3",
+      "community": 3,
+      "norm_label": "css3"
+    },
+    {
+      "label": "JavaScript",
+      "file_type": "image",
+      "source_file": "docs/assets/java-script.png",
+      "type": "skill",
+      "id": "skill_javascript",
+      "community": 4,
+      "norm_label": "javascript"
+    },
+    {
+      "label": "C++",
+      "file_type": "image",
+      "source_file": "docs/assets/c++.png",
+      "type": "skill",
+      "id": "skill_cplusplus",
+      "community": 0,
+      "norm_label": "c++"
+    },
+    {
+      "label": "Java",
+      "file_type": "image",
+      "source_file": "docs/assets/java.png",
+      "type": "skill",
+      "id": "skill_java",
+      "community": 0,
+      "norm_label": "java"
+    },
+    {
+      "label": "React",
+      "file_type": "image",
+      "source_file": "docs/assets/react.png",
+      "type": "skill",
+      "id": "skill_react",
+      "community": 2,
+      "norm_label": "react"
+    },
+    {
+      "label": "Node.js",
+      "file_type": "image",
+      "source_file": "docs/assets/nodejs.png",
+      "type": "skill",
+      "id": "skill_nodejs",
+      "community": 2,
+      "norm_label": "node.js"
+    },
+    {
+      "label": "Express",
+      "file_type": "image",
+      "source_file": "docs/assets/express.png",
+      "type": "skill",
+      "id": "skill_express",
+      "community": 2,
+      "norm_label": "express"
+    },
+    {
+      "label": "GitHub",
+      "file_type": "image",
+      "source_file": "docs/assets/github.png",
+      "type": "skill",
+      "id": "skill_github",
+      "community": 8,
+      "norm_label": "github"
+    },
+    {
+      "label": "Git",
+      "file_type": "image",
+      "source_file": "docs/assets/git.png",
+      "type": "skill",
+      "id": "skill_git",
+      "community": 9,
+      "norm_label": "git"
+    },
+    {
+      "label": "Bootstrap",
+      "file_type": "image",
+      "source_file": "docs/assets/bootstrap.png",
+      "type": "skill",
+      "id": "skill_bootstrap",
+      "community": 10,
+      "norm_label": "bootstrap"
+    },
+    {
+      "label": "Tailwind CSS",
+      "file_type": "image",
+      "source_file": "docs/assets/tailwind-css.svg",
+      "type": "skill",
+      "id": "skill_tailwind",
+      "community": 11,
+      "norm_label": "tailwind css"
+    },
+    {
+      "label": "MongoDB",
+      "file_type": "image",
+      "source_file": "docs/assets/mongodb-icon.svg",
+      "type": "skill",
+      "id": "skill_mongodb",
+      "community": 2,
+      "norm_label": "mongodb"
+    },
+    {
+      "label": "LinkedIn",
+      "file_type": "image",
+      "source_file": "docs/assets/linkedin.png",
+      "url": "https://www.linkedin.com/in/hrithik-kotha-b7914b230",
+      "type": "contact",
+      "id": "contact_linkedin",
+      "community": 0,
+      "norm_label": "linkedin"
+    },
+    {
+      "label": "GitHub Profile",
+      "file_type": "image",
+      "source_file": "docs/assets/github.png",
+      "url": "https://github.com/hrithikkotha",
+      "type": "contact",
+      "id": "contact_github_profile",
+      "community": 0,
+      "norm_label": "github profile"
+    },
+    {
+      "label": "Email: hrithikkotha@gmail.com",
+      "file_type": "image",
+      "source_file": "docs/assets/gmail.png",
+      "contact": "hrithikkotha@gmail.com",
+      "type": "contact",
+      "id": "contact_gmail",
+      "community": 0,
+      "norm_label": "email: hrithikkotha@gmail.com"
+    },
+    {
+      "label": "Instagram",
+      "file_type": "image",
+      "source_file": "docs/assets/instagram.png",
+      "url": "https://www.instagram.com/hrithik_kotha18",
+      "type": "contact",
+      "id": "contact_instagram",
+      "community": 0,
+      "norm_label": "instagram"
+    },
+    {
+      "label": "Phone: +91 8919818056",
+      "file_type": "image",
+      "source_file": "docs/assets/phone-call.png",
+      "contact": "+91 8919818056",
+      "type": "contact",
+      "id": "contact_phone",
+      "community": 0,
+      "norm_label": "phone: +91 8919818056"
+    },
+    {
+      "label": "Data Structures and Algorithms (DSA)",
+      "source_file": "docs/index.html",
+      "type": "knowledge",
+      "file_type": "document",
+      "id": "knowledge_dsa",
+      "community": 0,
+      "norm_label": "data structures and algorithms (dsa)"
+    },
+    {
+      "label": "MERN Stack Development",
+      "source_file": "docs/index.html",
+      "description": "Full-stack web development using MongoDB, Express, React, Node.js",
+      "type": "knowledge",
+      "file_type": "document",
+      "id": "knowledge_mern",
+      "community": 0,
+      "norm_label": "mern stack development"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_showaboutmodal",
+      "source": "docs_script_js",
+      "target": "script_showaboutmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_hideaboutmodal",
+      "source": "docs_script_js",
+      "target": "script_hideaboutmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_showflashmessage",
+      "source": "docs_script_js",
+      "target": "script_showflashmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_hideflashmessage",
+      "source": "docs_script_js",
+      "target": "script_hideflashmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_togglesidebar",
+      "source": "docs_script_js",
+      "target": "script_togglesidebar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_smoothscrollto",
+      "source": "docs_script_js",
+      "target": "script_smoothscrollto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_typegreeting",
+      "source": "docs_script_js",
+      "target": "script_typegreeting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_src": "docs_script_js",
+      "_tgt": "script_loopgreetings",
+      "source": "docs_script_js",
+      "target": "script_loopgreetings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "docs\\script.js",
+      "source_location": "L206",
+      "weight": 1.0,
+      "_src": "script_loopgreetings",
+      "_tgt": "script_typegreeting",
+      "source": "script_typegreeting",
+      "target": "script_loopgreetings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "project_fitforge",
+      "source": "person_hrithik_kotha",
+      "target": "project_fitforge"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "project_rentsy",
+      "source": "person_hrithik_kotha",
+      "target": "project_rentsy"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "project_taskmanager",
+      "source": "person_hrithik_kotha",
+      "target": "project_taskmanager"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "project_spotify_clone",
+      "source": "person_hrithik_kotha",
+      "target": "project_spotify_clone"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "project_flipkart_clone",
+      "source": "person_hrithik_kotha",
+      "target": "project_flipkart_clone"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "project_edtech",
+      "source": "person_hrithik_kotha",
+      "target": "project_edtech"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "skill_cplusplus",
+      "source": "person_hrithik_kotha",
+      "target": "skill_cplusplus"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "skill_java",
+      "source": "person_hrithik_kotha",
+      "target": "skill_java"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "knowledge_dsa",
+      "source": "person_hrithik_kotha",
+      "target": "knowledge_dsa"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "knowledge_mern",
+      "source": "person_hrithik_kotha",
+      "target": "knowledge_mern"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "contact_linkedin",
+      "source": "person_hrithik_kotha",
+      "target": "contact_linkedin"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "contact_github_profile",
+      "source": "person_hrithik_kotha",
+      "target": "contact_github_profile"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "contact_gmail",
+      "source": "person_hrithik_kotha",
+      "target": "contact_gmail"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "contact_instagram",
+      "source": "person_hrithik_kotha",
+      "target": "contact_instagram"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "person_hrithik_kotha",
+      "_tgt": "contact_phone",
+      "source": "person_hrithik_kotha",
+      "target": "contact_phone"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_fitforge",
+      "_tgt": "skill_mongodb",
+      "source": "project_fitforge",
+      "target": "skill_mongodb"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_fitforge",
+      "_tgt": "skill_express",
+      "source": "project_fitforge",
+      "target": "skill_express"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_fitforge",
+      "_tgt": "skill_react",
+      "source": "project_fitforge",
+      "target": "skill_react"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_fitforge",
+      "_tgt": "skill_nodejs",
+      "source": "project_fitforge",
+      "target": "skill_nodejs"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/index.html",
+      "reason": "Both are full-stack MERN projects",
+      "_src": "project_fitforge",
+      "_tgt": "project_rentsy",
+      "source": "project_fitforge",
+      "target": "project_rentsy"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_rentsy",
+      "_tgt": "skill_mongodb",
+      "source": "project_rentsy",
+      "target": "skill_mongodb"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_rentsy",
+      "_tgt": "skill_express",
+      "source": "project_rentsy",
+      "target": "skill_express"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_rentsy",
+      "_tgt": "skill_react",
+      "source": "project_rentsy",
+      "target": "skill_react"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_rentsy",
+      "_tgt": "skill_nodejs",
+      "source": "project_rentsy",
+      "target": "skill_nodejs"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_taskmanager",
+      "_tgt": "skill_react",
+      "source": "project_taskmanager",
+      "target": "skill_react"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_taskmanager",
+      "_tgt": "skill_javascript",
+      "source": "project_taskmanager",
+      "target": "skill_javascript"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_spotify_clone",
+      "_tgt": "skill_html5",
+      "source": "project_spotify_clone",
+      "target": "skill_html5"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_spotify_clone",
+      "_tgt": "skill_css3",
+      "source": "project_spotify_clone",
+      "target": "skill_css3"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/index.html",
+      "reason": "Both are frontend-only HTML/CSS clones",
+      "_src": "project_spotify_clone",
+      "_tgt": "project_flipkart_clone",
+      "source": "project_spotify_clone",
+      "target": "project_flipkart_clone"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "docs/index.html",
+      "reason": "Both are responsive web pages using HTML/CSS",
+      "_src": "project_spotify_clone",
+      "_tgt": "project_edtech",
+      "source": "project_spotify_clone",
+      "target": "project_edtech"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_flipkart_clone",
+      "_tgt": "skill_html5",
+      "source": "project_flipkart_clone",
+      "target": "skill_html5"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_flipkart_clone",
+      "_tgt": "skill_css3",
+      "source": "project_flipkart_clone",
+      "target": "skill_css3"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_edtech",
+      "_tgt": "skill_html5",
+      "source": "project_edtech",
+      "target": "skill_html5"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "_src": "project_edtech",
+      "_tgt": "skill_css3",
+      "source": "project_edtech",
+      "target": "skill_css3"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "reason": "Fundamental web technologies used together",
+      "_src": "skill_html5",
+      "_tgt": "skill_css3",
+      "source": "skill_html5",
+      "target": "skill_css3"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html",
+      "reason": "Core web development trio",
+      "_src": "skill_html5",
+      "_tgt": "skill_javascript",
+      "source": "skill_html5",
+      "target": "skill_javascript"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/index.html",
+      "reason": "Part of MERN stack ecosystem",
+      "_src": "skill_react",
+      "_tgt": "skill_nodejs",
+      "source": "skill_react",
+      "target": "skill_nodejs"
+    },
+    {
+      "relation": "related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/index.html",
+      "reason": "Express runs on Node.js",
+      "_src": "skill_express",
+      "_tgt": "skill_nodejs",
+      "source": "skill_nodejs",
+      "target": "skill_express"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "portfolio_frontend_skills",
+      "label": "Frontend Technologies",
+      "nodes": [
+        "skill_html5",
+        "skill_css3",
+        "skill_javascript",
+        "skill_react",
+        "skill_bootstrap",
+        "skill_tailwind"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html"
+    },
+    {
+      "id": "portfolio_backend_skills",
+      "label": "Backend Technologies",
+      "nodes": [
+        "skill_nodejs",
+        "skill_express",
+        "skill_mongodb"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html"
+    },
+    {
+      "id": "portfolio_mern_stack",
+      "label": "MERN Stack Projects",
+      "nodes": [
+        "project_fitforge",
+        "project_rentsy"
+      ],
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html"
+    },
+    {
+      "id": "portfolio_languages",
+      "label": "Programming Languages",
+      "nodes": [
+        "skill_cplusplus",
+        "skill_java",
+        "skill_javascript"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docs/index.html"
+    },
+    {
+      "id": "portfolio_version_control",
+      "label": "Version Control Tools",
+      "nodes": [
+        "skill_git",
+        "skill_github"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/index.html"
+    },
+    {
+      "id": "portfolio_css_frameworks",
+      "label": "CSS Framework & UI Libraries",
+      "nodes": [
+        "skill_bootstrap",
+        "skill_tailwind"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "docs/index.html"
+    }
+  ]
+}

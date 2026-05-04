@@ -20,19 +20,30 @@ router.post('/', async (req, res) => {
     try {
         const { name, email, message } = req.body;
 
-        // Basic validation
-        if (!name || !email || !message) {
-            console.warn('Validation failed: missing fields', { name, email, message });
-            return res.status(400).json({ success: false, message: 'Please provide name, email and message.' });
+        // Field-specific validation
+        const errors = {};
+        if (!name || name.trim().length < 2) {
+            errors.name = 'Please enter your full name (at least 2 characters).';
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email.trim())) {
+            errors.email = 'Please enter a valid email address.';
+        }
+        if (!message || message.trim().length < 10) {
+            errors.message = 'Message must be at least 10 characters long.';
+        }
+        if (Object.keys(errors).length > 0) {
+            console.warn('Validation failed:', errors);
+            return res.status(400).json({ success: false, errors, message: 'Please fix the errors below.' });
         }
 
         // Save message to DB
-        const saved = await Message.create({ name, email, message });
+        await Message.create({ name: name.trim(), email: email.trim(), message: message.trim() });
 
-        // If Resend API key is not set, don't attempt to send email — return success about saved message
+        // If Resend not configured, still count it as success for the user
         if (!process.env.RESEND_API_KEY || !process.env.EMAIL_USER) {
             console.warn('RESEND_API_KEY or EMAIL_USER not configured. Message saved but email not sent.');
-            return res.status(200).json({ success: true, message: 'Message saved (email not sent — email not configured).' });
+            return res.status(200).json({ success: true, message: "Thanks for reaching out! I'll get back to you soon." });
         }
 
         // Try to send notification email via Resend
@@ -40,27 +51,27 @@ router.post('/', async (req, res) => {
             await resend.emails.send({
                 from: 'onboarding@resend.dev',
                 to: process.env.EMAIL_USER,
-                replyTo: email,
-                subject: 'New Portfolio Message from ' + name,
+                replyTo: email.trim(),
+                subject: 'New Portfolio Message from ' + name.trim(),
                 html: `
                     <h2>New message from your portfolio contact form</h2>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Name:</strong> ${name.trim()}</p>
+                    <p><strong>Email:</strong> ${email.trim()}</p>
                     <p><strong>Message:</strong></p>
-                    <p>${message.replace(/\n/g, '<br>')}</p>
+                    <p>${message.trim().replace(/\n/g, '<br>')}</p>
                 `
             });
             console.log('Email sent successfully via Resend');
         } catch (mailErr) {
             console.error('Error sending email notification:', mailErr);
-            // Message is saved — inform client about email failure but return success for save
-            return res.status(200).json({ success: true, message: 'Message saved but failed to send email notification.' });
+            // Message is saved — show user-friendly success, log internally
+            return res.status(200).json({ success: true, message: "Thanks for reaching out! I'll get back to you soon." });
         }
 
-        return res.status(200).json({ success: true, message: 'Message sent successfully!' });
+        return res.status(200).json({ success: true, message: "Message sent! Thanks for reaching out — I'll reply shortly." });
     } catch (err) {
         console.error('Error in /api/messages route:', err);
-        return res.status(500).json({ success: false, message: 'Failed to process message. Check server logs.' });
+        return res.status(500).json({ success: false, message: 'Something went wrong on our end. Please try again in a moment.' });
     }
 });
 

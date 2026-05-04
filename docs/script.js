@@ -43,13 +43,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 function showFlashMessage(message, type = 'success') {
     const flashDiv = document.getElementById('flash-message');
+    const icon = type === 'success' ? '✅' : '❌';
     flashDiv.className = `flash-message ${type}`;
     flashDiv.innerHTML = `
-        <span>${message}</span>
+        <span class="flash-icon">${icon}</span>
+        <span class="flash-text">${message}</span>
         <button class="close-btn" onclick="hideFlashMessage()">&times;</button>
     `;
     flashDiv.style.display = 'flex';
-    setTimeout(hideFlashMessage, 4000);
+    // Errors stay longer (6s), success auto-hides in 4s
+    const duration = type === 'error' ? 6000 : 4000;
+    clearTimeout(window._flashTimeout);
+    window._flashTimeout = setTimeout(hideFlashMessage, duration);
 }
 function hideFlashMessage() {
     const flashDiv = document.getElementById('flash-message');
@@ -57,14 +62,80 @@ function hideFlashMessage() {
     flashDiv.innerHTML = '';
 }
 
+function setFieldError(fieldName, message) {
+    const field = document.querySelector(`[name="${fieldName}"]`);
+    if (!field) return;
+    field.classList.add('input-error');
+    let errEl = field.parentElement.querySelector(`.field-error[data-field="${fieldName}"]`);
+    if (!errEl) {
+        errEl = document.createElement('span');
+        errEl.className = 'field-error';
+        errEl.setAttribute('data-field', fieldName);
+        field.after(errEl);
+    }
+    errEl.textContent = message;
+}
+
+function clearFieldError(fieldName) {
+    const field = document.querySelector(`[name="${fieldName}"]`);
+    if (!field) return;
+    field.classList.remove('input-error');
+    const errEl = field.parentElement.querySelector(`.field-error[data-field="${fieldName}"]`);
+    if (errEl) errEl.remove();
+}
+
+function clearAllFieldErrors() {
+    ['name', 'email', 'message'].forEach(clearFieldError);
+}
+
+function validateForm(data) {
+    const errors = {};
+    if (!data.name || data.name.trim().length < 2) {
+        errors.name = 'Please enter your full name (at least 2 characters).';
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!data.email || !emailRegex.test(data.email.trim())) {
+        errors.email = 'Please enter a valid email address (e.g. name@example.com).';
+    }
+    if (!data.message || data.message.trim().length < 10) {
+        errors.message = 'Message must be at least 10 characters long.';
+    }
+    return errors;
+}
+
 document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
     const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    // Prevent multiple submissions
+    if (submitBtn.disabled) return;
+
+    clearAllFieldErrors();
+
     const data = {
         name: form.name.value,
         email: form.email.value,
         message: form.message.value
     };
+
+    // Client-side validation first (no server round-trip needed)
+    const clientErrors = validateForm(data);
+    if (Object.keys(clientErrors).length > 0) {
+        Object.entries(clientErrors).forEach(([field, msg]) => setFieldError(field, msg));
+        // Focus first invalid field
+        const firstField = form.querySelector('.input-error');
+        if (firstField) firstField.focus();
+        return;
+    }
+
+    // Set loading state
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...';
+    submitBtn.style.opacity = '0.6';
+    submitBtn.style.cursor = 'not-allowed';
+
     try {
         const res = await fetch('/api/messages', {
             method: 'POST',
@@ -75,12 +146,29 @@ document.getElementById('contactForm').addEventListener('submit', async function
         if (result.success) {
             showFlashMessage(result.message, 'success');
             form.reset();
+            clearAllFieldErrors();
         } else {
-            showFlashMessage(result.message, 'error');
+            // Show server-side field errors inline if provided
+            if (result.errors) {
+                Object.entries(result.errors).forEach(([field, msg]) => setFieldError(field, msg));
+            }
+            showFlashMessage(result.message || 'Please check the form and try again.', 'error');
         }
     } catch (err) {
-        showFlashMessage('Something went wrong. Please try again.', 'error');
+        showFlashMessage('Unable to send message. Please check your connection and try again.', 'error');
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
     }
+});
+
+// Clear inline errors as user types/edits a field
+['name', 'email', 'message'].forEach(fieldName => {
+    const field = document.querySelector(`[name="${fieldName}"]`);
+    if (field) field.addEventListener('input', () => clearFieldError(fieldName));
 });
 
 function toggleSidebar() {
