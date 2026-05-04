@@ -22,7 +22,7 @@
     }
 
     html {
-        background: linear-gradient(120deg, #18181f 0%, #232323 100%);
+        background: black;
         background-attachment: fixed;
     }
 }
